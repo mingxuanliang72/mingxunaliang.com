@@ -1,1 +1,66 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>Resume — Your Name</title><link rel="stylesheet" href="css/style.css" /></head><body><header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">Your Name</a><nav class="main-nav"><a href="about.html">About</a><a href="projects.html">Case Studies</a><a href="resume.html" class="active">Resume</a><a href="contact.html">Contact</a></nav></div></header><main><section class="page container"><h1>Resume</h1><p>Add your resume here.</p></section></main><footer class="site-footer"><div class="container footer-inner"><p>© <span id="year4"></span> Your Name</p></div></footer><script>document.getElementById('year4').textContent = new Date().getFullYear();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resume — Mingxuan Liang</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="main-nav">
+        <a href="about.html">About</a>
+        <a href="projects.html">Case Studies</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page container">
+      <h1>Resume</h1>
+      <div class="resume-grid">
+        <div class="col">
+          <h3>Experience</h3>
+          <div class="job">
+            <h4>Product Designer — Company Name</h4>
+            <p class="muted">2023 — Present</p>
+            <ul>
+              <li>Lead UX research and interaction design for core product flows.</li>
+              <li>Collaborated with PMs and Engineers to ship a redesigned onboarding.</li>
+              <li>Measured improvements in conversion and user satisfaction.</li>
+            </ul>
+          </div>
+          <!-- more roles -->
+        </div>
+
+        <aside class="col">
+          <h3>Skills</h3>
+          <ul class="skills">
+            <li>UX Research</li>
+            <li>Interaction Design</li>
+            <li>Prototyping (Figma)</li>
+            <li>Information Architecture</li>
+            <li>Accessibility</li>
+          </ul>
+
+          <h3>Education</h3>
+          <p>BA / BS in [Field], [School], Year</p>
+        </aside>
+      </div>
+      <p class="muted small">Download PDF: <a href="#">yourname-resume.pdf</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year4"></span> Your Name</p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
+</body>
+</html>
