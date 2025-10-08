@@ -1,49 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Your Name</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - UX Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">Your Name</a>
-      <nav class="main-nav">
-        <a href="about.html" class="active">About</a>
-        <a href="projects.html">Case Studies</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page container">
-      <div class="about-grid">
-        <div class="about-text">
-          <h1>About Me</h1>
-          <p class="lead">My path to UX wasn't linear. It began by building a brand from the ground up at Lan Studio, where I learned business strategy and the customer journey firsthand. It deepened at Erovenus, where I moved from marketing to users to designing with them, conducting intimate research to understand their needs. This passion for user-centric problem-solving led me to formalize my skills through the Google UX Certificate, where I applied a rigorous design process to create impactful digital products.</p>
-          <h3>Approach</h3>
-          <p>My process centers on listening — synthesizing insights into clear priorities, designing with constraints in mind, and validating through lightweight prototypes and user feedback.</p>
-          <h3>Tools</h3>
-          <p>Figma • Miro • FigJam • Sketch • Notion • HTML/CSS basics</p>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Your Name</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="your-resume.pdf" target="_blank">Resume</a></li>
+            </ul>
         </div>
-        <aside class="about-aside">
-          <img src="images/avatar-placeholder.jpg" alt="Your portrait" class="avatar">
-          <p class="muted">Based in Hongkong. Open to remote and hybrid opportunities.</p>
-        </aside>
-      </div>
+    </nav>
+
+    <section class="case-study-hero">
+        <div class="hero-content">
+            <h1>About Me</h1>
+            <p>My journey from entrepreneurship to user experience design</p>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year2"></span> Mingxuan Liang</p>
-    </div>
-  </footer>
+    <section class="case-study-content">
+        <div class="content-section">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start;">
+                <div>
+                    <img src="assets/profile-photo.jpg" alt="Your Name" style="width: 100%; border-radius: 1rem;">
+                </div>
+                <div>
+                    <h2>My Story</h2>
+                    <p style="font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem;">
+                        My path to UX wasn't linear. It began by building a brand from the ground up at <strong>Lan Studio</strong>, where I learned business strategy and the customer journey firsthand. It deepened at <strong>Erovenus</strong>, where I moved from marketing to users to designing with them, conducting intimate research to understand their needs.
+                    </p>
+                    <p style="font-size: 1.125rem; line-height: 1.8;">
+                        This passion for user-centric problem-solving led me to formalize my skills through the <strong>Google UX Certificate</strong>, where I applied a rigorous design process to create impactful digital products like the Museum and Clinic apps. I believe in designing experiences that are not only beautiful but also meaningful and effective.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+        <div class="content-section">
+            <h2>Skills & Expertise</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="skill-category">
+                    <h3>UX Research & Strategy</h3>
+                    <ul>
+                        <li>User & Stakeholder Interviews</li>
+                        <li>Usability Testing & A/B Testing</li>
+                        <li>Competitive Analysis & Market Research</li>
+                        <li>Journey Mapping & Persona Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>UX/UI Design & Prototyping</h3>
+                    <ul>
+                        <li>Interactive Prototyping (Figma)</li>
+                        <li>Information Architecture & User Flows</li>
+                        <li>Visual & Interaction Design</li>
+                        <li>Wireframing & Iterative Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical & Analytical</h3>
+                    <ul>
+                        <li>Python & Data Analysis</li>
+                        <li>Machine Learning Applications</li>
+                        <li>Adobe Creative Suite</li>
+                        <li>Blender</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Let's Work Together</h2>
+            <p style="font-size: 1.125rem; margin-bottom: 2rem;">
+                I'm always open to discussing new opportunities, interesting projects, or just having a conversation about UX design and product strategy.
+            </p>
+            <a href="mailto:your.email@domain.com" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Connect with me</h3>
+            <div class="contact-links">
+                <a href="mailto:your.email@domain.com">your.email@domain.com</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
