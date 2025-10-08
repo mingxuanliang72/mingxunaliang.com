@@ -1,66 +1,415 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Resume — Mingxuan Liang</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Your Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 0.5px solid var(--border);
+        }
+        
+        .resume-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-header p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+        
+        .resume-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .resume-contact a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        
+        .resume-contact a:hover {
+            color: var(--primary-color);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--primary-color);
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .resume-section {
+            margin-bottom: 3rem;
+        }
+        
+        .resume-section h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 0.5px solid var(--border);
+        }
+        
+        .experience-item, .education-item {
+            margin-bottom: 2.5rem;
+        }
+        
+        .experience-header, .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-title, .education-title {
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: var(--primary-color);
+        }
+        
+        .experience-company, .education-institution {
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+        
+        .experience-date, .education-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            text-align: right;
+        }
+        
+        .experience-details, .education-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-bullets, .education-bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .experience-bullets li, .education-bullets li {
+            position: relative;
+            padding: 0.25rem 0 0.25rem 1.5rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .experience-bullets li:before, .education-bullets li:before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--text-light);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 0;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .skill-list li {
+            padding: 0.5rem 0;
+            border-bottom: 0.5px solid var(--border-thin);
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 6rem 1.5rem 3rem;
+            }
+            
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+            
+            .experience-header, .education-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .experience-date, .education-date {
+                text-align: left;
+                margin-top: 0.25rem;
+            }
+            
+            .resume-contact {
+                gap: 1rem;
+            }
+        }
+        
+        @media print {
+            .navbar, .footer, .download-btn {
+                display: none;
+            }
+            
+            .resume-container {
+                padding: 0;
+                margin: 0;
+                max-width: none;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .resume-header {
+                margin-bottom: 2rem;
+            }
+            
+            .resume-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            .experience-item, .education-item {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">Your Name</a>
-      <nav class="main-nav">
-        <a href="about.html">About</a>
-        <a href="projects.html">Case Studies</a>
-        <a href="resume.html" class="active">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="page container">
-      <h1>Resume</h1>
-      <div class="resume-grid">
-        <div class="col">
-          <h3>Experience</h3>
-          <div class="job">
-            <h4>Product Designer — Company Name</h4>
-            <p class="muted">2023 — Present</p>
-            <ul>
-              <li>Lead UX research and interaction design for core product flows.</li>
-              <li>Collaborated with PMs and Engineers to ship a redesigned onboarding.</li>
-              <li>Measured improvements in conversion and user satisfaction.</li>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Your Name</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="work.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
-          </div>
-          <!-- more roles -->
+        </div>
+    </nav>
+
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1>Your Name</h1>
+            <p>UX Designer & Researcher</p>
+            <div class="resume-contact">
+                <a href="mailto:your.email@domain.com">your.email@domain.com</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+            </div>
+            <a href="your-resume.pdf" class="download-btn" download>Download PDF</a>
         </div>
 
-        <aside class="col">
-          <h3>Skills</h3>
-          <ul class="skills">
-            <li>UX Research</li>
-            <li>Interaction Design</li>
-            <li>Prototyping (Figma)</li>
-            <li>Information Architecture</li>
-            <li>Accessibility</li>
-          </ul>
+        <div class="resume-section">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">UX Designer</div>
+                        <div class="experience-company">Google UX Certificate Program</div>
+                    </div>
+                    <div class="experience-date">Jun 2025 - Oct 2025</div>
+                </div>
+                <div class="experience-details">Online Certification Program</div>
+                <ul class="experience-bullets">
+                    <li>Led end-to-end UX design for multiple projects including a museum mobile app and clinic reservation system</li>
+                    <li>Conducted user research, created wireframes, and developed interactive prototypes using Figma</li>
+                    <li>Performed usability testing and iterated designs based on user feedback and data analysis</li>
+                    <li>Boosted task completion rates by 40% and projected 30% reduction in administrative overhead</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Social Media Editor & Community Researcher</div>
+                        <div class="experience-company">Erovenus</div>
+                    </div>
+                    <div class="experience-date">Mar 2024 - Present</div>
+                </div>
+                <div class="experience-details">Adult Supply E-commerce Brand</div>
+                <ul class="experience-bullets">
+                    <li>Conducted qualitative user research by engaging directly with the community to identify and recruit Key Opinion Customers</li>
+                    <li>Synthesized market and user research to define brand audience personas and identify strategic KOL partnerships</li>
+                    <li>Led end-to-end content creation rooted in user insights, increasing community engagement by 25%</li>
+                    <li>Developed and hosted podcast series focusing on user experiences and industry insights</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Founder & Product Manager</div>
+                        <div class="experience-company">Lan Studio</div>
+                    </div>
+                    <div class="experience-date">Jan 2023 - Present</div>
+                </div>
+                <div class="experience-details">E-commerce Home Decor Brand</div>
+                <ul class="experience-bullets">
+                    <li>Founded and grew e-commerce brand from concept to profitable business with focus on user-centered design</li>
+                    <li>Conducted market research and competitive analysis to identify customer needs and market opportunities</li>
+                    <li>Designed and optimized customer journey from discovery to purchase, achieving high customer retention rates</li>
+                    <li>Managed product development, inventory, and customer experience strategies</li>
+                </ul>
+            </div>
+        </div>
 
-          <h3>Education</h3>
-          <p>BA / BS in [Field], [School], Year</p>
-        </aside>
-      </div>
-      <p class="muted small">Download PDF: <a href="#">yourname-resume.pdf</a></p>
-    </section>
-  </main>
+        <div class="resume-section">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-title">Google UX Design Professional Certificate</div>
+                        <div class="education-institution">Google</div>
+                    </div>
+                    <div class="education-date">2025</div>
+                </div>
+                <ul class="education-bullets">
+                    <li>Comprehensive training in UX research, wireframing, prototyping, and testing</li>
+                    <li>Completed portfolio projects including mobile app and responsive web design</li>
+                </ul>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div>
+                        <div class="education-title">Bachelor of Science in [Your Field]</div>
+                        <div class="education-institution">[Your University]</div>
+                    </div>
+                    <div class="education-date">2018 - 2022</div>
+                </div>
+                <ul class="education-bullets">
+                    <li>Graduated with [Your Honors/Distinction]</li>
+                    <li>Relevant coursework: Human-Computer Interaction, Design Thinking, Data Analysis</li>
+                </ul>
+            </div>
+        </div>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year4"></span> Your Name</p>
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>UX Research & Strategy</h3>
+                    <ul class="skill-list">
+                        <li>User & Stakeholder Interviews</li>
+                        <li>Usability Testing & A/B Testing</li>
+                        <li>Competitive Analysis & Market Research</li>
+                        <li>Journey Mapping & Persona Development</li>
+                        <li>Affinity Mapping & Synthesis</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>UX/UI Design & Prototyping</h3>
+                    <ul class="skill-list">
+                        <li>Interactive Prototyping (Figma)</li>
+                        <li>Information Architecture & User Flows</li>
+                        <li>Wireframing & Visual Design</li>
+                        <li>Interaction Design</li>
+                        <li>Design Systems</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical & Analytical</h3>
+                    <ul class="skill-list">
+                        <li>Python & Data Analysis</li>
+                        <li>R Studio & Statistical Analysis</li>
+                        <li>SQL & Database Management</li>
+                        <li>Machine Learning Concepts</li>
+                        <li>HTML/CSS & Basic Frontend</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Tools & Software</h3>
+                    <ul class="skill-list">
+                        <li>Figma</li>
+                        <li>Adobe Creative Suite</li>
+                        <li>Blender</li>
+                        <li>Miro</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-section">
+            <h2>Certifications</h2>
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <div class="experience-title">Google UX Design Certificate</div>
+                        <div class="experience-company">Google</div>
+                    </div>
+                    <div class="experience-date">2025</div>
+                </div>
+            </div>
+            <!-- Add more certifications as needed -->
+        </div>
     </div>
-  </footer>
 
-  <script>document.getElementById('year4').textContent = new Date().getFullYear();</script>
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Let's work together</h3>
+            <p>Open to full-time positions, freelance projects, and design collaborations</p>
+            <div class="contact-links">
+                <a href="mailto:your.email@domain.com">your.email@domain.com</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
