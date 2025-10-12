@@ -297,7 +297,7 @@ p {
 
 /* Vertical mockup images - KEEP YOUR EXISTING STYLES */
 .project-image-vertical img {
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: contain;
     border-radius: 24px;
