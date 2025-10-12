@@ -237,7 +237,7 @@ p {
 
 /* KEEP THIS - For horizontal banner images */
 .project-image {
-    height: 220px;
+    height: 400px; /* Increased from 220px */
     overflow: hidden;
     background: var(--background-light);
     display: flex;
